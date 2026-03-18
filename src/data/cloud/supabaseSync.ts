@@ -177,3 +177,4 @@ export async function deleteCloudStudyItems(userId: string, itemIds: string[]) {
     }
   }
 }
+// Note: This file only contains the cloud sync logic and is not responsible for merging or reconciling data differences between local and cloud. The sync process should be handled in a higher-level module that can utilize these functions to perform the necessary operations based on the app's requirements.
