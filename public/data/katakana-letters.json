@@ -1,0 +1,851 @@
+{
+  "version": "1.0.0",
+  "description": "Basic katakana characters for letters tab",
+  "data": [
+    {
+      "note_id": "kana_a",
+      "front": "ア",
+      "back": "a",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_i",
+      "front": "イ",
+      "back": "i",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_u",
+      "front": "ウ",
+      "back": "u",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_e",
+      "front": "エ",
+      "back": "e",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_o",
+      "front": "オ",
+      "back": "o",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ka",
+      "front": "カ",
+      "back": "ka",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ki",
+      "front": "キ",
+      "back": "ki",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ku",
+      "front": "ク",
+      "back": "ku",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ke",
+      "front": "ケ",
+      "back": "ke",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ko",
+      "front": "コ",
+      "back": "ko",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_sa",
+      "front": "サ",
+      "back": "sa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_shi",
+      "front": "シ",
+      "back": "shi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_su",
+      "front": "ス",
+      "back": "su",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_se",
+      "front": "セ",
+      "back": "se",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_so",
+      "front": "ソ",
+      "back": "so",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ta",
+      "front": "タ",
+      "back": "ta",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_chi",
+      "front": "チ",
+      "back": "chi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tsu",
+      "front": "ツ",
+      "back": "tsu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_te",
+      "front": "テ",
+      "back": "te",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_to",
+      "front": "ト",
+      "back": "to",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_na",
+      "front": "ナ",
+      "back": "na",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ni",
+      "front": "ニ",
+      "back": "ni",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_nu",
+      "front": "ヌ",
+      "back": "nu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ne",
+      "front": "ネ",
+      "back": "ne",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_no",
+      "front": "ノ",
+      "back": "no",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ha",
+      "front": "ハ",
+      "back": "ha",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_hi",
+      "front": "ヒ",
+      "back": "hi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_fu",
+      "front": "フ",
+      "back": "fu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_he",
+      "front": "ヘ",
+      "back": "he",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ho",
+      "front": "ホ",
+      "back": "ho",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ma",
+      "front": "マ",
+      "back": "ma",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_mi",
+      "front": "ミ",
+      "back": "mi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_mu",
+      "front": "ム",
+      "back": "mu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_me",
+      "front": "メ",
+      "back": "me",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_mo",
+      "front": "モ",
+      "back": "mo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ya",
+      "front": "ヤ",
+      "back": "ya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_yu",
+      "front": "ユ",
+      "back": "yu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_yo",
+      "front": "ヨ",
+      "back": "yo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ra",
+      "front": "ラ",
+      "back": "ra",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ri",
+      "front": "リ",
+      "back": "ri",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ru",
+      "front": "ル",
+      "back": "ru",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_re",
+      "front": "レ",
+      "back": "re",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ro",
+      "front": "ロ",
+      "back": "ro",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_wa",
+      "front": "ワ",
+      "back": "wa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_wo",
+      "front": "ヲ",
+      "back": "wo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_n",
+      "front": "ン",
+      "back": "n",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ga",
+      "front": "ガ",
+      "back": "ga",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gi",
+      "front": "ギ",
+      "back": "gi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gu",
+      "front": "グ",
+      "back": "gu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ge",
+      "front": "ゲ",
+      "back": "ge",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_go",
+      "front": "ゴ",
+      "back": "go",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_za",
+      "front": "ザ",
+      "back": "za",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ji",
+      "front": "ジ",
+      "back": "ji",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_zu",
+      "front": "ズ",
+      "back": "zu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ze",
+      "front": "ゼ",
+      "back": "ze",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_zo",
+      "front": "ゾ",
+      "back": "zo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_da",
+      "front": "ダ",
+      "back": "da",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_di",
+      "front": "ヂ",
+      "back": "di",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_du",
+      "front": "ヅ",
+      "back": "du",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_de",
+      "front": "デ",
+      "back": "de",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_do",
+      "front": "ド",
+      "back": "do",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ba",
+      "front": "バ",
+      "back": "ba",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_bi",
+      "front": "ビ",
+      "back": "bi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_bu",
+      "front": "ブ",
+      "back": "bu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_be",
+      "front": "ベ",
+      "back": "be",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_bo",
+      "front": "ボ",
+      "back": "bo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pa",
+      "front": "パ",
+      "back": "pa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pi",
+      "front": "ピ",
+      "back": "pi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pu",
+      "front": "プ",
+      "back": "pu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pe",
+      "front": "ペ",
+      "back": "pe",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_po",
+      "front": "ポ",
+      "back": "po",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kya",
+      "front": "キャ",
+      "back": "kya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kyu",
+      "front": "キュ",
+      "back": "kyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kyo",
+      "front": "キョ",
+      "back": "kyo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_sha",
+      "front": "シャ",
+      "back": "sha",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_shu",
+      "front": "シュ",
+      "back": "shu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_sho",
+      "front": "ショ",
+      "back": "sho",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_cha",
+      "front": "チャ",
+      "back": "cha",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_chu",
+      "front": "チュ",
+      "back": "chu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_cho",
+      "front": "チョ",
+      "back": "cho",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_nya",
+      "front": "ニャ",
+      "back": "nya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_nyu",
+      "front": "ニュ",
+      "back": "nyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_nyo",
+      "front": "ニョ",
+      "back": "nyo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_hya",
+      "front": "ヒャ",
+      "back": "hya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_hyu",
+      "front": "ヒュ",
+      "back": "hyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_hyo",
+      "front": "ヒョ",
+      "back": "hyo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_mya",
+      "front": "ミャ",
+      "back": "mya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_myu",
+      "front": "ミュ",
+      "back": "myu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_myo",
+      "front": "ミョ",
+      "back": "myo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_rya",
+      "front": "リャ",
+      "back": "rya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ryu",
+      "front": "リュ",
+      "back": "ryu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ryo",
+      "front": "リョ",
+      "back": "ryo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gya",
+      "front": "ギャ",
+      "back": "gya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gyu",
+      "front": "ギュ",
+      "back": "gyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gyo",
+      "front": "ギョ",
+      "back": "gyo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_jya",
+      "front": "ジャ",
+      "back": "ja",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_jyu",
+      "front": "ジュ",
+      "back": "ju",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_jyo",
+      "front": "ジョ",
+      "back": "jo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_bya",
+      "front": "ビャ",
+      "back": "bya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_byu",
+      "front": "ビュ",
+      "back": "byu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_byo",
+      "front": "ビョ",
+      "back": "byo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pya",
+      "front": "ピャ",
+      "back": "pya",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pyu",
+      "front": "ピュ",
+      "back": "pyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_pyo",
+      "front": "ピョ",
+      "back": "pyo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_fa",
+      "front": "ファ",
+      "back": "fa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_fi",
+      "front": "フィ",
+      "back": "fi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_fe",
+      "front": "フェ",
+      "back": "fe",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_fo",
+      "front": "フォ",
+      "back": "fo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_vu",
+      "front": "ヴ",
+      "back": "vu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_va",
+      "front": "ヴァ",
+      "back": "va",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_vi",
+      "front": "ヴィ",
+      "back": "vi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ve",
+      "front": "ヴェ",
+      "back": "ve",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_vo",
+      "front": "ヴォ",
+      "back": "vo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_ti",
+      "front": "ティ",
+      "back": "ti",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tu",
+      "front": "トゥ",
+      "back": "tu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_che",
+      "front": "チェ",
+      "back": "che",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_she",
+      "front": "シェ",
+      "back": "she",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_je",
+      "front": "ジェ",
+      "back": "je",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tsa",
+      "front": "ツァ",
+      "back": "tsa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tse",
+      "front": "ツェ",
+      "back": "tse",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tso",
+      "front": "ツォ",
+      "back": "tso",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_di",
+      "front": "ディ",
+      "back": "di",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_du",
+      "front": "ドゥ",
+      "back": "du",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_dyu",
+      "front": "デュ",
+      "back": "dyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_wi",
+      "front": "ウィ",
+      "back": "wi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_we",
+      "front": "ウェ",
+      "back": "we",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_wo",
+      "front": "ウォ",
+      "back": "wo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kwa",
+      "front": "クァ",
+      "back": "kwa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kwi",
+      "front": "クィ",
+      "back": "kwi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kwe",
+      "front": "クェ",
+      "back": "kwe",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_kwo",
+      "front": "クォ",
+      "back": "kwo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gwa",
+      "front": "グァ",
+      "back": "gwa",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gwi",
+      "front": "グィ",
+      "back": "gwi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gwe",
+      "front": "グェ",
+      "back": "gwe",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_gwo",
+      "front": "グォ",
+      "back": "gwo",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_si",
+      "front": "スィ",
+      "back": "si",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_zu",
+      "front": "ズィ",
+      "back": "zi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tsi",
+      "front": "ツィ",
+      "back": "tsi",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_tyu",
+      "front": "テュ",
+      "back": "tyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_vyu",
+      "front": "ヴュ",
+      "back": "vyu",
+      "category": "letter"
+    },
+    {
+      "note_id": "kana_vyo",
+      "front": "ヴョ",
+      "back": "vyo",
+      "category": "letter"
+    } ]
+}
