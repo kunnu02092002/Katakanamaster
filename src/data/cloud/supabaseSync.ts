@@ -155,3 +155,25 @@ export async function pushCloudStudyItems(userId: string, items: StudyItem[]) {
     throw error;
   }
 }
+
+export async function deleteCloudStudyItems(userId: string, itemIds: string[]) {
+  if (!itemIds.length) {
+    return;
+  }
+
+  const client = getClientOrThrow();
+  const chunkSize = 500;
+
+  for (let i = 0; i < itemIds.length; i += chunkSize) {
+    const chunk = itemIds.slice(i, i + chunkSize);
+    const { error } = await client
+      .from("user_progress")
+      .delete()
+      .eq("user_id", userId)
+      .in("item_id", chunk);
+
+    if (error) {
+      throw error;
+    }
+  }
+}

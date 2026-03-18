@@ -11,6 +11,7 @@ import {
   upsertStudyItems,
 } from "../data/db/studyItemsRepo";
 import {
+  deleteCloudStudyItems,
   getCloudSession,
   isCloudSyncConfigured,
   onCloudAuthStateChange,
@@ -360,9 +361,17 @@ export const useAppStore = create<AppState>((set, get) => ({
       ]);
 
       const mergedItems = mergeStudyItems(localItems, cloudItems);
+      const touchedItems = getTouchedItems(mergedItems);
+      const touchedIds = new Set(touchedItems.map((item) => item.id));
+      const untouchedIds = mergedItems
+        .map((item) => item.id)
+        .filter((itemId) => !touchedIds.has(itemId));
 
       await upsertStudyItems(mergedItems);
-      await pushCloudStudyItems(userId, getTouchedItems(mergedItems));
+      await Promise.all([
+        pushCloudStudyItems(userId, touchedItems),
+        deleteCloudStudyItems(userId, untouchedIds),
+      ]);
 
       await get().refresh();
       set({
