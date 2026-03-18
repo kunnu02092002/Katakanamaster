@@ -2,23 +2,19 @@ import { create } from "zustand";
 import type { StudyItem } from "../domain/models";
 import {
   applyReview,
-  getAllReviewHistoryEntries,
   getAllStudyItems,
   getDueItems,
   getLetters,
   getReviewDaysSet,
   getWords,
   initializeData,
-  mergeReviewHistoryEntries,
   upsertStudyItems,
 } from "../data/db/studyItemsRepo";
 import {
   getCloudSession,
   isCloudSyncConfigured,
   onCloudAuthStateChange,
-  pullCloudReviewEvents,
   pullCloudStudyItems,
-  pushCloudReviewEvents,
   pushCloudStudyItems,
   signInWithEmailOtp,
   signInWithPhoneOtp,
@@ -101,6 +97,23 @@ function mergeStudyItems(localItems: StudyItem[], cloudItems: StudyItem[]) {
   });
 
   return Array.from(merged.values());
+}
+
+function isTouchedItem(item: StudyItem) {
+  return (
+    item.reps > 0 ||
+    item.lapses > 0 ||
+    item.interval > 0 ||
+    item.stepIndex > 0 ||
+    item.leechCount > 0 ||
+    item.lastDate !== null ||
+    item.state !== "learning" ||
+    Math.abs(item.ef - 2.5) > 1e-9
+  );
+}
+
+function getTouchedItems(items: StudyItem[]) {
+  return items.filter(isTouchedItem);
 }
 
 function getFilteredWords(state: Pick<AppState, "words" | "relatedLetter" | "search">) {
@@ -341,39 +354,15 @@ export const useAppStore = create<AppState>((set, get) => ({
     });
 
     try {
-      const [localItems, localReviewEvents, cloudItems, cloudReviewEvents] = await Promise.all([
+      const [localItems, cloudItems] = await Promise.all([
         getAllStudyItems(),
-        getAllReviewHistoryEntries(),
         pullCloudStudyItems(userId),
-        pullCloudReviewEvents(userId),
       ]);
 
       const mergedItems = mergeStudyItems(localItems, cloudItems);
-      const mergedReviewEvents = [...localReviewEvents, ...cloudReviewEvents].reduce(
-        (acc, entry) => {
-          const key = `${entry.itemId}|${entry.quality}|${entry.timestamp}`;
-          if (!acc.keys.has(key)) {
-            acc.keys.add(key);
-            acc.items.push({
-              itemId: entry.itemId,
-              quality: entry.quality,
-              timestamp: entry.timestamp,
-            });
-          }
-          return acc;
-        },
-        { keys: new Set<string>(), items: [] as Array<{ itemId: string; quality: number; timestamp: string }> }
-      ).items;
 
-      await Promise.all([
-        upsertStudyItems(mergedItems),
-        mergeReviewHistoryEntries(mergedReviewEvents),
-      ]);
-
-      await Promise.all([
-        pushCloudStudyItems(userId, mergedItems),
-        pushCloudReviewEvents(userId, mergedReviewEvents),
-      ]);
+      await upsertStudyItems(mergedItems);
+      await pushCloudStudyItems(userId, getTouchedItems(mergedItems));
 
       await get().refresh();
       set({
@@ -398,17 +387,14 @@ export const useAppStore = create<AppState>((set, get) => ({
     }
 
     const item = filtered[state.flashIndex] ?? filtered[0];
-    const { updated, reviewEntry } = await applyReview(item, quality);
+    const { updated } = await applyReview(item, quality);
 
     if (state.cloudConfigured && state.cloudConnected) {
       try {
         const session = await getCloudSession();
         const userId = session?.user?.id;
         if (userId) {
-          await Promise.all([
-            pushCloudStudyItems(userId, [updated]),
-            pushCloudReviewEvents(userId, [reviewEntry]),
-          ]);
+          await pushCloudStudyItems(userId, [updated]);
           set({ cloudSyncState: "idle", cloudMessage: "Cloud synced" });
         }
       } catch (error) {

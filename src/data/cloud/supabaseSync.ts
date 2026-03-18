@@ -1,19 +1,10 @@
 import { createClient, type Session, type SupabaseClient } from "@supabase/supabase-js";
-import type { ReviewHistoryEntry, StudyItem } from "../../domain/models";
-
-type ReviewEvent = Pick<ReviewHistoryEntry, "itemId" | "quality" | "timestamp">;
+import type { StudyItem } from "../../domain/models";
 
 interface CloudProgressRow {
   user_id: string;
   item_id: string;
   payload: StudyItem;
-}
-
-interface CloudReviewRow {
-  user_id: string;
-  item_id: string;
-  quality: number;
-  timestamp: string;
 }
 
 function firstNonEmpty(...values: Array<string | undefined>) {
@@ -160,47 +151,6 @@ export async function pushCloudStudyItems(userId: string, items: StudyItem[]) {
   }));
 
   const { error } = await client.from("user_progress").upsert(rows, { onConflict: "user_id,item_id" });
-  if (error) {
-    throw error;
-  }
-}
-
-export async function pullCloudReviewEvents(userId: string) {
-  const client = getClientOrThrow();
-
-  const { data, error } = await client
-    .from("user_review_events")
-    .select("item_id,quality,timestamp")
-    .eq("user_id", userId);
-
-  if (error) {
-    throw error;
-  }
-
-  return (data as CloudReviewRow[] | null)?.map((row) => ({
-    itemId: row.item_id,
-    quality: row.quality,
-    timestamp: row.timestamp,
-  })) ?? [];
-}
-
-export async function pushCloudReviewEvents(userId: string, entries: ReviewEvent[]) {
-  if (!entries.length) {
-    return;
-  }
-
-  const client = getClientOrThrow();
-  const rows: CloudReviewRow[] = entries.map((entry) => ({
-    user_id: userId,
-    item_id: entry.itemId,
-    quality: entry.quality,
-    timestamp: entry.timestamp,
-  }));
-
-  const { error } = await client
-    .from("user_review_events")
-    .upsert(rows, { onConflict: "user_id,item_id,timestamp,quality" });
-
   if (error) {
     throw error;
   }
