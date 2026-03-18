@@ -111,12 +111,12 @@ export default function App() {
     const good = [...letterScores]
       .sort((a, b) => b.averageStrength - a.averageStrength)
       .slice(0, 24)
-      .filter((item) => item.averageStrength > 2.5);
+      .filter((item) => item.averageStrength >= 2.5);
 
     const weak = [...letterScores]
       .sort((a, b) => a.averageStrength - b.averageStrength)
       .slice(0, 24)
-      .filter((item) => item.averageStrength <= 2.5);
+      .filter((item) => item.averageStrength < 2.5);
 
     return { good, weak };
   }, [words, letters]);
