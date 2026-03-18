@@ -367,6 +367,11 @@ export const useAppStore = create<AppState>((set, get) => ({
         .map((item) => item.id)
         .filter((itemId) => !touchedIds.has(itemId));
 
+      console.log(
+        `Sync: Local=${localItems.length}, Cloud=${cloudItems.length}, Merged=${mergedItems.length}`,
+      );
+      console.log(`Sync: Touched=${touchedItems.length}, Untouched=${untouchedIds.length}`);
+
       await upsertStudyItems(mergedItems);
       await Promise.all([
         pushCloudStudyItems(userId, touchedItems),
