@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { speakJapanese } from "../data/audio/speechService";
 import { useAppStore } from "../state/useAppStore";
 import "../styles/globals.css";
@@ -26,6 +26,7 @@ export default function App() {
   const [loginPhone, setLoginPhone] = useState("");
   const [loginCode, setLoginCode] = useState("");
   const [awaitingPhoneOtp, setAwaitingPhoneOtp] = useState(false);
+  const pendingCardChangeTimer = useRef<number | null>(null);
 
   const {
     initialized,
@@ -334,17 +335,43 @@ export default function App() {
     return nextIndex;
   };
 
+  const navigateToCard = (nextIndex: number) => {
+    if (pendingCardChangeTimer.current !== null) {
+      window.clearTimeout(pendingCardChangeTimer.current);
+      pendingCardChangeTimer.current = null;
+    }
+
+    if (cardFlipped) {
+      toggleFlip();
+      pendingCardChangeTimer.current = window.setTimeout(() => {
+        setFlashIndex(nextIndex);
+        pendingCardChangeTimer.current = null;
+      }, 220);
+      return;
+    }
+
+    setFlashIndex(nextIndex);
+  };
+
   const goToPreviousCard = () => {
     if (!filteredWords.length) return;
     const nextIndex = randomizeWithinFiltered();
-    setFlashIndex(nextIndex);
+    navigateToCard(nextIndex);
   };
 
   const goToNextCard = () => {
     if (!filteredWords.length) return;
     const nextIndex = randomizeWithinFiltered();
-    setFlashIndex(nextIndex);
+    navigateToCard(nextIndex);
   };
+
+  useEffect(() => {
+    return () => {
+      if (pendingCardChangeTimer.current !== null) {
+        window.clearTimeout(pendingCardChangeTimer.current);
+      }
+    };
+  }, []);
 
   useEffect(() => {
     const handler = (event: KeyboardEvent) => {
